@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
-* Project Name: *Your Project Name here*
+* Name: Luong Hung Son, Phung Duc Tuan, Nguyen Vu Hung
+* ID: USTHBI6-126, USTHBI5-145, USTHBI6-061
+* Group ID: 6
+* Project Name: Twitter
