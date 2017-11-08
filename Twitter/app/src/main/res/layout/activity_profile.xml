@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container2"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#223149">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/black_space"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#00AEFF">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/up_user_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_user"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/up_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/up_user_img"
+            android:text="Nguyễn Văn Ahhh"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/up_tweet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/up_user_name"
+            android:text=" @nguyenvanahhh"
+            android:layout_marginLeft="15dp"
+            android:textColor="#9a9d9e"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/up_tweet_name"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp">
+
+            <TextView
+                android:id="@+id/up_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="201 following"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/up_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/up_following"
+                android:text="115 followers"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/black_space"
+            android:layout_margin="5dp"
+            android:backgroundTint="#0f1621"
+            android:textColor="#9a9d9e"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        app:tabIndicatorColor="#00AEFF"
+        app:tabTextColor="#9a9d9e"
+        app:tabSelectedTextColor="#00AEFF"
+        android:background="#0f1621"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"/>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager2">
+    </android.support.v4.view.ViewPager>
+
+
+</LinearLayout>

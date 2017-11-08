@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#223149">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Eminem mess -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:paddingLeft="10dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/ic_launcher_user2"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"/>
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:textAlignment="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:text=" Eminem &#64;eminem"
+                    android:textColor="#ffffff"
+                    android:gravity="bottom"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:text=" Sent you a photo:ayy"
+                    android:textColor="#ffffff"
+                    android:gravity="top"/>
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:textColor="#9a9d9e"
+                android:text="2h"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
+        <View android:background="#0f1621"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"/>
+
+        <!-- LHS mess -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:paddingLeft="10dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/ic_super_user"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"/>
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:textAlignment="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:text=" Lương Hùng Sơn &#64;luo.."
+                    android:textColor="#ffffff"
+                    android:gravity="bottom"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:text=" ahihi"
+                    android:textColor="#ffffff"
+                    android:gravity="top"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:textColor="#9a9d9e"
+                android:text="8h"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
+        <View android:background="#0f1621"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </LinearLayout>
+</ScrollView>
