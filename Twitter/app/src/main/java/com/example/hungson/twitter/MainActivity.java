@@ -10,7 +10,10 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -21,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i(TAG, "onCreate");
+
+//        String username = getIntent().getStringExtra("username");
+//        TextView uname = findViewById(R.id.TV_username);
+//        uname.setText(username);
 
         PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -59,6 +66,54 @@ public class MainActivity extends AppCompatActivity {
         Intent n = new Intent(this,ProfileActivity.class);
         startActivity(n);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+//            case R.id.action_refresh:
+//                Refresh("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
+//
+//                return true;
+
+            default:
+                Intent i = new Intent(this, PhucActivity.class);
+                startActivity(i);
+        }
+        return true;
+    }
+
+//    public void Refresh(String... url) {
+//        RequestQueue queue = ((TwitterApp)getApplication()).getQueue();
+//        // once, should be performed once per app instance
+//        StringRequest request = new StringRequest(url[0],
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        try {
+//                            TextView textView = (TextView)findViewById(R.id.feed1_status);
+//                            JSONObject obj = new JSONObject(response);
+//                            String string = obj.getJSONObject("query").getJSONObject("results").getJSONObject("channel").getJSONObject("item").getJSONObject("condition").getString("text");
+//                            textView.setText(string);
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//
+//                        }
+//                        Log.i("Twitter", "Json response " + response);
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                    }
+//                });
+//        queue.add(request);
+//    }
 
     @Override
     protected void onStart () {

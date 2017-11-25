@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Twitter</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">ovIQ7Ltyykw5p1Y8g0ucyWLEx</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">7t0KyVHFbru0D9XqQiHltXIsIyhPPF1hztR5TPZLjuKaAIaI5d</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->

@@ -31,5 +31,9 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.+'
     compile 'com.felipecsl:gifimageview:2.1.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.twitter.sdk.android:twitter:3.1.1'
+    compile 'com.twitter.sdk.android:twitter-core:3.1.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
