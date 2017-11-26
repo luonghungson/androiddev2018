@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.getTabAt(i).setIcon(imageResId[i]);
         }
 
-//        play =(Button) findViewById(R.id.button2);
-//        video =(VideoView) findViewById(R.id.feed3_video);
     }
 
 //    public void playVideo(View v){
@@ -162,8 +160,11 @@ public class MainActivity extends AppCompatActivity {
                 case 2: return new NotifyFragment();
                 case 3: return new MessageFragment();
                 case 4: return new UserInfoFragment();
+
+                default: return new NewsFragment();
+
             }
-            return new EmptyFragment();
+//            return new EmptyFragment();
         }
 
 //        @Override

@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     TwitterLoginButton loginButton;
 
     private static final String TAG = "LoginActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void login(TwitterSession session){
+    public void login(TwitterSession session) {
         String username = session.getUserName();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.putExtra("username", username);
@@ -63,36 +64,36 @@ public class LoginActivity extends AppCompatActivity {
         // Pass the activity result to the login button.
         loginButton.onActivityResult(requestCode, resultCode, data);
     }
-
+}
 //    public void openMainActivity(View v)
 //    {
 //        Intent n = new Intent(this,MainActivity.class);
 //        startActivity(n);
 //    }
 
-    @Override
-    protected void onStart () {
-        super.onStart();
-        Log.i(TAG, "onStart");
-    }
-    @Override
-    protected void onResume () {
-        super.onResume();
-        Log.i(TAG, "onResume");
-    }
-    @Override
-    protected void  onPause() {
-        super.onPause();
-        Log.i(TAG, "onPause");
-    }
-    @Override
-    protected void onStop () {
-        super.onStop();
-        Log.i(TAG, "onStop");
-    }
-    @Override
-    protected void onDestroy () {
-        super.onDestroy();
-        Log.i(TAG, "onDestroy");
-    }
-}
+//    @Override
+//    protected void onStart () {
+//        super.onStart();
+//        Log.i(TAG, "onStart");
+//    }
+//    @Override
+//    protected void onResume () {
+//        super.onResume();
+//        Log.i(TAG, "onResume");
+//    }
+//    @Override
+//    protected void  onPause() {
+//        super.onPause();
+//        Log.i(TAG, "onPause");
+//    }
+//    @Override
+//    protected void onStop () {
+//        super.onStop();
+//        Log.i(TAG, "onStop");
+//    }
+//    @Override
+//    protected void onDestroy () {
+//        super.onDestroy();
+//        Log.i(TAG, "onDestroy");
+//    }
+//}

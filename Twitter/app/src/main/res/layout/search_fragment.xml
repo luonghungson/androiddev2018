@@ -1,225 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<android.support.v4.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#223149">
-    <LinearLayout
-        android:orientation="vertical"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!-- search box -->
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="7dp"
-            android:backgroundTint="#00AEFF"
-            android:textColor="#ffffff">
-        </EditText>
+        android:layout_height="match_parent"/>
+</android.support.v4.widget.SwipeRefreshLayout>
+<!--<ScrollView-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#223149">-->
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--&lt;!&ndash; search box &ndash;&gt;-->
+        <!--<EditText-->
+            <!--android:id="@+id/editText"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="7dp"-->
+            <!--android:backgroundTint="#00AEFF"-->
+            <!--android:textColor="#ffffff">-->
+        <!--</EditText>-->
 
-        <!-- Trends for you -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:text="Trends for you"
-            android:paddingLeft="10dp"
-            android:textColor="#ffffff"
-            android:layout_marginBottom="5dp"/>
-        <!-- border bottom -->
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+        <!--&lt;!&ndash; Trends for you &ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="22sp"-->
+            <!--android:text="Trends for you"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:layout_marginBottom="5dp"/>-->
+        <!--&lt;!&ndash; border bottom &ndash;&gt;-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"/>-->
 
-        <!-- Saigon -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:textSize="22sp"
-            android:text="#Saigon"
-            android:textColor="#ffffff"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"/>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+        <!--&lt;!&ndash; Saigon &ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:textSize="22sp"-->
+            <!--android:text="#Saigon"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="10dp"/>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
 
-        <!-- Vietnam -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingLeft="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="#Vietnam"
-                android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:gravity="bottom"/>
+        <!--&lt;!&ndash; Vietnam &ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:paddingLeft="10dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="#Vietnam"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="22sp"-->
+                <!--android:gravity="bottom"/>-->
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="2,617 Tweets"
-                android:textColor="#9a9d9e"
-                android:textSize="16sp"
-                android:gravity="top"/>
-        </LinearLayout>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+            <!--<TextView-->
+                <!--android:id="@+id/textView"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="2,617 Tweets"-->
+                <!--android:textColor="#9a9d9e"-->
+                <!--android:textSize="16sp"-->
+                <!--android:gravity="top"/>-->
+        <!--</LinearLayout>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
 
-        <!-- Trung Quốc -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:textSize="22sp"
-            android:text="#Trung Quốc"
-            android:textColor="#ffffff"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"/>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+        <!--&lt;!&ndash; Trung Quốc &ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:textSize="22sp"-->
+            <!--android:text="#Trung Quốc"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="10dp"/>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
 
-        <!-- LaDivinaComida -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingLeft="10dp">
+        <!--&lt;!&ndash; LaDivinaComida &ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:paddingLeft="10dp">-->
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:text="#LaDivinaComida"
-                android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:gravity="bottom"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:text="12.1K Tweets"
-                android:textColor="#9a9d9e"
-                android:gravity="top"/>
-        </LinearLayout>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+            <!--<TextView-->
+                <!--android:id="@+id/textView3"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="#LaDivinaComida"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="22sp"-->
+                <!--android:gravity="bottom"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="12.1K Tweets"-->
+                <!--android:textColor="#9a9d9e"-->
+                <!--android:gravity="top"/>-->
+        <!--</LinearLayout>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
 
-        <!-- BagulhosSinistros -->
+        <!--&lt;!&ndash; BagulhosSinistros &ndash;&gt;-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingLeft="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:textSize="22sp"
-                android:text="#BagulhosSinistros"
-                android:textColor="#ffffff"
-                android:gravity="bottom"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:text="29.1K Tweets"
-                android:textColor="#9a9d9e"
-                android:gravity="top"/>
-        </LinearLayout>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:paddingLeft="10dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="22sp"-->
+                <!--android:text="#BagulhosSinistros"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:gravity="bottom"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="29.1K Tweets"-->
+                <!--android:textColor="#9a9d9e"-->
+                <!--android:gravity="top"/>-->
+        <!--</LinearLayout>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
 
-        <!-- UFC -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingLeft="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:textSize="22sp"
-                android:text="#UFCSP"
-                android:textColor="#ffffff"
-                android:gravity="bottom"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:text="25.6K Tweets"
-                android:textColor="#9a9d9e"
-                android:gravity="top"/>
-        </LinearLayout>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+        <!--&lt;!&ndash; UFC &ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:paddingLeft="10dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="22sp"-->
+                <!--android:text="#UFCSP"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:gravity="bottom"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="25.6K Tweets"-->
+                <!--android:textColor="#9a9d9e"-->
+                <!--android:gravity="top"/>-->
+        <!--</LinearLayout>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
 
-        <!-- yamero -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingLeft="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:textSize="22sp"
-                android:text="#地味ハロウィン"
-                android:textColor="#ffffff"
-                android:gravity="bottom"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:text="11.8K Tweets"
-                android:textColor="#9a9d9e"
-                android:gravity="top"/>
-        </LinearLayout>
-        <View android:background="#0f1621"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
-        <!-- Show more -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Show more"
-            android:textColor="#00AEFF"
-            android:paddingLeft="10dp"
-            android:layout_marginBottom="40dp"/>
-    </LinearLayout>
-</ScrollView>
+        <!--&lt;!&ndash; yamero &ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:paddingLeft="10dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0px"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="22sp"-->
+                <!--android:text="#地味ハロウィン"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:gravity="bottom"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="11.8K Tweets"-->
+                <!--android:textColor="#9a9d9e"-->
+                <!--android:gravity="top"/>-->
+        <!--</LinearLayout>-->
+        <!--<View android:background="#0f1621"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.1dp"/>-->
+        <!--&lt;!&ndash; Show more &ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="18sp"-->
+            <!--android:text="Show more"-->
+            <!--android:textColor="#00AEFF"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:layout_marginBottom="40dp"/>-->
+    <!--</LinearLayout>-->
+<!--</ScrollView>-->
