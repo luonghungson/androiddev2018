@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#223149">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/black_space"
             android:layout_margin="5dp"
-            android:backgroundTint="#0f1621"
+            android:backgroundTint="@color/tab"
             android:textColor="#9a9d9e"/>
 
     </RelativeLayout>
@@ -94,7 +94,7 @@
         app:tabIndicatorColor="#00AEFF"
         app:tabTextColor="#9a9d9e"
         app:tabSelectedTextColor="#00AEFF"
-        android:background="#0f1621"
+        android:background="@color/tab"
         app:tabMode="scrollable"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"/>
 

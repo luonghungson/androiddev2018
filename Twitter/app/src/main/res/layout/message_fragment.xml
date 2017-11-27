@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#223149">
+    android:background="@color/background">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="15dp"/>
         </LinearLayout>
-        <View android:background="#0f1621"
+        <View android:background="@color/tab"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"/>
 
@@ -111,7 +111,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="15dp"/>
         </LinearLayout>
-        <View android:background="#0f1621"
+        <View android:background="@color/tab"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
     </LinearLayout>

@@ -33,7 +33,11 @@ import static android.content.ContentValues.TAG;
  */
 
 public class NewsFragment extends Fragment {
-
+    public TweetTimelineRecyclerViewAdapter adapter;
+    public RecyclerView recyclerView;
+    public FixedTweetTimeline timeline;
+    public SwipeRefreshLayout swipeLayout;
+    public Result<List<Tweet>> resultlist;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -42,77 +46,31 @@ public class NewsFragment extends Fragment {
         final View View = inflater.inflate(R.layout.news_fragment, container, false);
         View.setTag(TAG);
 
-        final RecyclerView recyclerView = (RecyclerView) View.findViewById(R.id.recycler_view_1);
+
+        recyclerView = (RecyclerView) View.findViewById(R.id.recycler_view_1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-//        TwitterSession session = TwitterCore.getInstance().getSessionManager().getActiveSession();
-//
-//        final List<Tweet> listOfTweets = new ArrayList<>();
-//        final Callback<List<Tweet>> callback = new Callback<List<Tweet>>() {
-//            @Override
-//            public void success(Result<List<Tweet>> result) {
-//                for (Tweet t : result.data) {
-//                    listOfTweets.add(t);
-//                    android.util.Log.d("twittercommunity", "tweet is " + t.text);
-//                }
-//                final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) View.findViewById(R.id.swipe_refresh_1);
-//                final FixedTweetTimeline fixedTweetTimeline = new FixedTweetTimeline.Builder()
-//                        .setTweets(listOfTweets)
-//                        .build();
-//
-//                final TweetTimelineRecyclerViewAdapter adapter = new TweetTimelineRecyclerViewAdapter.Builder(getActivity())
-//                        .setTimeline(fixedTweetTimeline)
-//                        .setViewStyle(R.style.tw__TweetDarkWithActionsStyle)
-//                        .build();
-//                recyclerView.setAdapter(adapter);
-//
-//                swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//                    @Override
-//                    public void onRefresh() {
-//                        swipeLayout.setRefreshing(true);
-//                        adapter.refresh(new Callback<TimelineResult<Tweet>>() {
-//                            @Override
-//                            public void success(Result<TimelineResult<Tweet>> result) {
-//                                swipeLayout.setRefreshing(false);
-//                            }
-//
-//                            @Override
-//                            public void failure(TwitterException exception) {
-//                                // Toast or some other action
-//                            }
-//                        });
-//                    }
-//                });
-//            }
-//
-//            @Override
-//            public void failure(TwitterException exception) {
-//                android.util.Log.d("twittercommunity", "exception " + exception);
-//            }
-//        };
-//
-//        TwitterCore.getInstance().getApiClient(session).getStatusesService()
-//                .homeTimeline(null, null, null, null, null, null, null)
-//                .enqueue(callback);
-
 
         TwitterApiClient twitterApiClient = TwitterCore.getInstance().getApiClient();
         StatusesService statusesService = twitterApiClient.getStatusesService();
+
+
 
         final Call<List<Tweet>> call = statusesService.homeTimeline(500, null, null, null, null, null, null);
                 call.enqueue(new Callback<List<Tweet>>() {
                     @Override
                     public void success(Result<List<Tweet>> result) {
-                        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) View.findViewById(R.id.swipe_refresh_1);
-                        final FixedTweetTimeline timeline = new FixedTweetTimeline.Builder()
-                                .setTweets(result.data)
+                        resultlist = result;
+                        timeline = new FixedTweetTimeline.Builder()
+                                .setTweets(resultlist.data)
                                 .build();
-                        final TweetTimelineRecyclerViewAdapter adapter = new TweetTimelineRecyclerViewAdapter.Builder(getActivity())
+
+                        adapter = new TweetTimelineRecyclerViewAdapter.Builder(getActivity())
                                 .setTimeline(timeline)
                                 .setViewStyle(R.style.tw__TweetDarkWithActionsStyle)
                                 .build();
                         recyclerView.setAdapter(adapter);
 
+                        swipeLayout = (SwipeRefreshLayout) View.findViewById(R.id.swipe_refresh_1);
                         swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                             @Override
                             public void onRefresh() {
@@ -130,12 +88,43 @@ public class NewsFragment extends Fragment {
                                 });
                             }
                         });
+//                        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) View.findViewById(R.id.swipe_refresh_1);
+
+//                        timeline = new FixedTweetTimeline.Builder()
+//                                .setTweets(result.data)
+//                                .build();
+//
+//                        adapter = new TweetTimelineRecyclerViewAdapter.Builder(getActivity())
+//                                .setTimeline(timeline)
+//                                .setViewStyle(R.style.tw__TweetDarkWithActionsStyle)
+//                                .build();
+//                        recyclerView.setAdapter(adapter);
+
+//                        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//                            @Override
+//                            public void onRefresh() {
+//                                swipeLayout.setRefreshing(true);
+//                                adapter.refresh(new Callback<TimelineResult<Tweet>>() {
+//                                    @Override
+//                                    public void success(Result<TimelineResult<Tweet>> result) {
+//                                        swipeLayout.setRefreshing(false);
+//                                    }
+//
+//                                    @Override
+//                                    public void failure(TwitterException exception) {
+//
+//                                    }
+//                                });
+//                            }
+//                        });
                     }
                     @Override
                     public void failure(TwitterException exception) {
                     }
                 }
         );
+
+
         return View;
 //        return inflater.inflate(R.layout.news_fragment,container,false);
 
